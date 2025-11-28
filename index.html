@@ -14,6 +14,50 @@
     <title>Login Page</title>
   </head>
   <body>
+
+    <header class="bg-white shadow relative">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="text-xl font-bold">Brand</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-6">
+      <a class="hover:underline" href="#">Home</a>
+      <a class="hover:underline" href="#">About</a>
+      <a class="hover:underline" href="#">Contact</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <button class="md:hidden" id="menuBtn">☰</button>
+  </div>
+
+  <!-- Right Side Menu Drawer -->
+  <div
+    id="mobileMenu"
+    class="fixed top-0 right-0 h-full w-[250px] bg-[#FFFFFFE6] shadow-lg transform translate-x-full transition-all duration-300 flex flex-col gap-6 p-6 md:hidden"
+  >
+    <button id="closeBtn" class="text-2xl font-bold self-end">✕</button>
+    <a class="hover:underline" href="#">Home</a>
+    <a class="hover:underline" href="#">About</a>
+    <a class="hover:underline" href="#">Contact</a>
+  </div>
+</header>
+
+<script>
+  const menu = document.getElementById("mobileMenu");
+  const openBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
+
+  openBtn.addEventListener("click", () => {
+    menu.classList.remove("translate-x-full"); // show menu
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.add("translate-x-full"); // hide menu
+  });
+</script>
+
+
+    
     <div class="login-page xl:flex justify-center xl:space-x-[200px] mt-[40px]">
 
       <div class="log-text">
